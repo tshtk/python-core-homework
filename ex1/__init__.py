@@ -11,12 +11,9 @@ def build_roles_tree(mapping):
         category["text"] = mapping["categories"][categoryId]["name"]
         items =[]
         for roleId in mapping["categories"][categoryId]["roleIds"]:
-            item = dict()
-            item["id"] = roleId
-            item["text"] = mapping["roles"][roleId]["name"]
-            items.append(item)                
+            item = {"id": roleId, "text": mapping["roles"][roleId]["name"]}
+            items.append(item)
         category["items"] = items
         categories.append(category)
-    tree["categories"] = categories
-    return tree
+    return {"categories":categories}
 
