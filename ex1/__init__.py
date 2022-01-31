@@ -3,7 +3,6 @@ def build_roles_tree(mapping):
     :param mapping: маппинг ролей в категории
     :return: дерево ролей
     """
-    tree = {}
     categories = []
     for categoryId in mapping["categoryIdsSorted"]:
         category = dict()
