@@ -1,4 +1,5 @@
 from ex2 import fetcher
+import time
 
 CALL_COUNT = 10
 
@@ -12,14 +13,14 @@ def benchmark(num):
     """
     def wrapper(func):        
         def inner_wrap(*args, **kwargs):
-            total_time =0
+            total_time = 0
             for i in range(num):
                 start = time.time()
                 func(*args, **kwargs)
                 end = time.time()
                 print (f"duration of run #{i+1}: {end-start}\n")
                 total_time+=end-start
-            print (f"\naverage run time: {total_time/num}")
+            print (f"average run time: {total_time/num}\n")
         return inner_wrap        
     return wrapper
 
