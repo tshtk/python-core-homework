@@ -11,17 +11,17 @@ def benchmark(num):
     :param num: число итераций
     :return: функцию обёртку
     """
-    def wrapper(func):        
+    def wrapper(func):
         def inner_wrap(*args, **kwargs):
             total_time = 0
             for i in range(num):
                 start = time.time()
                 func(*args, **kwargs)
                 end = time.time()
-                print (f"duration of run #{i+1}: {end-start}\n")
-                total_time+=end-start
-            print (f"average run time: {total_time/num}\n")
-        return inner_wrap        
+                print(f"duration of run #{i+1}: {end-start}\n")
+                total_time += end - start
+            print(f"average run time: {total_time/num}\n")
+        return inner_wrap
     return wrapper
 
 
